@@ -1,3 +1,25 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.env
+.DS_Store
+.env.local
+.env.development.local
+.env.testing.local
+.enc.production.local
+
+npm-debig.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
 # Compiled class file
 *.class
 
