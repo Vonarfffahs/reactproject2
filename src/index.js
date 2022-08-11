@@ -16,54 +16,23 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-const arr = [
-    0,
-    12,
-    25,
-    'hello world',
-    'mixalk',
-    53,
-    94,
-    18,
-    'SyN4',
-    24,
-    13,
-];
+const car1 = {
+  color: 'red',
+  go: () => console.log('GO'),
+  stop: () => console.log('STOP'),
+};
 
-const sortNumbers = arr
-  .filter((value) => {
-    if (typeof value === 'number'){
-      return true;
-    }
-    return false;
-  })
-  .sort((prev, next) => {
-    if (prev < next) {
-      return 1;
-    }
-    if (prev > next) {
-      return -1;
-    }
-      return 0;
-  });
+const car2 = {
+  ...car1, // <= это называется spread operator
+  round: () => console.log('ROUND'),
+  go: () => console.log('GO2'),
+};
 
-  const sortItems = arr
-  .filter((value) => {
-    return typeof value === 'string'
-       ? true
-       : false;
- })
-  .sort((prev, next) => {
-    if (prev < next) {
-      return -1;
-    }
-    if (prev > next) {
-      return 1;
-    }
-      return 0;
-  });
+car1.go();
+car2.go();
 
-console.log('arr2', sortItems.concat(sortNumbers));
+
+
 
 
 
