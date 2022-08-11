@@ -15,13 +15,55 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
- 
-let a={
-  color: 'red',
-  seze: 14,
-  props: {
-    key: 'value',
-  }
-};
 
-console.log(null);
+const arr = [
+    0,
+    12,
+    25,
+    'hello world',
+    'mixalk',
+    53,
+    94,
+    18,
+    'SyN4',
+    24,
+    13,
+];
+
+const sortNumbers = arr
+  .filter((value) => {
+    if (typeof value === 'number'){
+      return true;
+    }
+    return false;
+  })
+  .sort((prev, next) => {
+    if (prev < next) {
+      return 1;
+    }
+    if (prev > next) {
+      return -1;
+    }
+      return 0;
+  });
+
+  const sortItems = arr
+  .filter((value) => {
+    return typeof value === 'string'
+       ? true
+       : false;
+ })
+  .sort((prev, next) => {
+    if (prev < next) {
+      return -1;
+    }
+    if (prev > next) {
+      return 1;
+    }
+      return 0;
+  });
+
+console.log('arr2', sortItems.concat(sortNumbers));
+
+
+
