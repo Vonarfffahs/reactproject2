@@ -16,22 +16,31 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-const car1 = {
-  color: 'red',
-  go: () => console.log('GO'),
-  stop: () => console.log('STOP'),
+const mySort = (arr = [], func) => {
+  return () => { 
+    return arr.sort((value, next) => {
+      return typeof func === 'function'
+      ? func(value, next)
+      : value > next
+        ? 1
+        : value < next
+          ? -1
+          : 0;
+    });
+  };
 };
+const arr = [ 1, 6, 15, 32 ];
 
-const car2 = {
-  ...car1, // <= это называется spread operator
-  round: () => console.log('ROUND'),
-  go: () => console.log('GO2'),
-};
+const sortFunc1 = mySort([...arr]);
+const sortFunc2 = mySort([...arr], (value, next) => {
+  return value > next
+  ? -1
+  : value < next
+    ? 1
+    : 0;
+});
 
-car1.go();
-car2.go();
-
-
+console.log('sortFunc', sortFunc1(), sortFunc2())
 
 
 
